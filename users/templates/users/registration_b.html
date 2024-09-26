@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmer Registration Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/registration_b.css' %}">
+</head>
+<body>
+    <h2>Farmer Sign-Up Form</h2>
+    <form class="form-container">
+        <fieldset>
+            <legend>1. Personal Information</legend>
+            <label for="first_name">First Name (Mandatory):</label>
+            <input type="text" id="first_name" name="first_name" required><br><br>
+            
+            <label for="middle_name">Middle Name (Optional):</label>
+            <input type="text" id="middle_name" name="middle_name"><br><br>
+            
+            <label for="last_name">Last Name (Mandatory):</label>
+            <input type="text" id="last_name" name="last_name" required><br><br>
+            
+            <label>Gender (Mandatory):</label>
+            <input type="radio" name="gender" value="Male" required>Male
+            <input type="radio" name="gender" value="Female" required>Female
+            <input type="radio" name="gender" value="Other" required>Other<br><br>
+            
+            <label for="dob">Date of Birth (Mandatory):</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+            
+            <label for="id_type">National Identification Number (Mandatory):</label>
+            <select id="id_type" name="id_type">
+                <option value="national_id">National ID</option>
+                <option value="social_security">Social Security</option>
+                <option value="aadhaar">Aadhaar</option>
+            </select>
+            <input type="text" name="id_number" placeholder="ID Number" required><br><br>
+            
+            <label for="fathers_name">Father’s/Husband’s Name (Optional):</label>
+            <input type="text" id="fathers_name" name="fathers_name"><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>2. Contact Information</legend>
+            <label for="primary_phone">Primary Mobile Phone Number (Mandatory):</label>
+            <select id="country_code" name="country_code">
+                <option value="+1">+1</option>
+                <option value="+91">+91</option>
+                <!-- Add more country codes here -->
+            </select>
+            <input type="text" id="primary_phone" name="primary_phone" required><br><br>
+
+            <label for="alt_phone">Alternate Mobile Phone Number (Optional):</label>
+            <select id="alt_country_code" name="alt_country_code">
+                <option value="+1">+1</option>
+                <option value="+91">+91</option>
+                <!-- Add more country codes here -->
+            </select>
+            <input type="text" id="alt_phone" name="alt_phone"><br><br>
+
+            <label for="email">Email Address (Optional):</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="home_address">Home Address (Mandatory):</label>
+            <input type="text" id="home_address" name="home_address" placeholder="Street Address/Plot Number" required><br><br>
+            <input type="text" id="village" name="village" placeholder="Village/Town/City" required><br><br>
+            <input type="text" id="district" name="district" placeholder="District" required><br><br>
+            <input type="text" id="state" name="state" placeholder="State/Province" required><br><br>
+            <input type="text" id="postal_code" name="postal_code" placeholder="Postal/Zip Code" required><br><br>
+            <select id="country" name="country">
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <!-- Add more countries here -->
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>3. Farm Information</legend>
+            <label for="farm_name">Farm Name (Optional):</label>
+            <input type="text" id="farm_name" name="farm_name"><br><br>
+            
+            <label for="farm_location">Farm Location (Mandatory):</label>
+            <select id="farm_country" name="farm_country" required>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <!-- Add more countries here -->
+            </select><br><br>
+            <input type="text" id="farm_state" name="farm_state" placeholder="State/Province" required><br><br>
+            <input type="text" id="farm_district" name="farm_district" placeholder="District/County" required><br><br>
+            <input type="text" id="farm_village" name="farm_village" placeholder="Village/Town" required><br><br>
+
+            <label for="nearest_city">Nearest City/Market (Mandatory):</label>
+            <input type="text" id="nearest_city" name="nearest_city" required><br><br>
+
+            <label>Ownership Type (Mandatory):</label>
+            <input type="radio" name="ownership" value="Owned" required>Owned
+            <input type="radio" name="ownership" value="Leased" required>Leased
+            <input type="radio" name="ownership" value="Community-Owned" required>Community-Owned<br><br>
+
+            <label for="lease_duration">Tenure/Lease Duration (Mandatory if Leased):</label>
+            <input type="text" id="lease_duration" name="lease_duration" placeholder="Duration (years)"><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>4. Farm Size and Production Capacity</legend>
+            <label for="total_area">Total Land Area (Mandatory):</label>
+            <input type="text" id="total_area" name="total_area" placeholder="Size (in Acres or Hectares)" required><br><br>
+
+            <label for="cultivated_area">Cultivated Area (Mandatory):</label>
+            <input type="text" id="cultivated_area" name="cultivated_area" placeholder="Size (in Acres or Hectares)" required><br><br>
+
+            <label for="fallow_land">Fallow Land (Optional):</label>
+            <input type="text" id="fallow_land" name="fallow_land" placeholder="Size (in Acres or Hectares)"><br><br>
+
+            <label for="farm_layout">Farm Layout Description (Optional):</label>
+            <textarea id="farm_layout" name="farm_layout"></textarea><br><br>
+        </fieldset>
+
+        <!-- Continue adding the remaining sections as needed -->
+
+         <div class="register-link">
+             <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

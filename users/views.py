@@ -6,20 +6,20 @@ from django.contrib import messages
 
 
 def register_user(request):
-    form = UserRegistrationForm()
-    if request.method == "POST":
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(
-                request,
-                f"Congratulation, registration successful",
-            )
-            return redirect("login")
-    else:
-        form = UserRegistrationForm()
+    # form = UserRegistrationForm()
+    # if request.method == "POST":
+    #     form = UserRegistrationForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         messages.success(
+    #             request,
+    #             f"Congratulation, registration successful",
+    #         )
+    #         return redirect("login")
+    # else:
+    #     form = UserRegistrationForm()
 
-    return render(request, "users/registration.html", {"form": form})
+    return render(request, "users/registration_b.html")
 
 
 @login_required
